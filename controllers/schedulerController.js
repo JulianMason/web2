@@ -6,7 +6,7 @@ const db = new schedulerDAO();
 
 
 exports.landing_page = function(req, res) {
-    res.send('<h1>Landing page here!</h1>')
+    res.redirect('view courses.html');
 };
 
 exports.welcome = function(req, res) {
