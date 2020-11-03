@@ -1,0 +1,26 @@
+{
+  "name": "coursework_scheduler",
+  "version": "1.0.0",
+  "description": "An app that allows a student schedule the workflow of their coursework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianMason/web2.git"
+  },
+  "author": "Julian Bara-Mason S1903337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulianMason/web2/issues"
+  },
+  "homepage": "https://github.com/JulianMason/web2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mustache-express": "^1.3.0",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.6"
+  }
+}
