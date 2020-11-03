@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>scheduer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Start: Navigation with Search -->
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+        <div class="container"><a class="navbar-brand" href="#">CWScheduler</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Add Coursework</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Delete coursework</a></li>
+                </ul>
+                <form class="form-inline mr-auto" target="_self">
+                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
+                </form><a class="btn btn-light action-button" role="button" href="#">Log out</a></div>
+        </div>
+    </nav>
+    <!-- End: Navigation with Search -->
+    <div class="container text-left" style="width: 351px;">
+        <form action="add" method="post"><label for="coursework">Coursework title</label>
+            <div class="input-group">
+                <div class="input-group-prepend"></div><input class="form-control" type="text" placeholder="coursework" name="coursework" required="" title="ffef">
+                <div class="input-group-append"></div>
+            </div><label for="module">Module</label><label></label>
+            <div class="input-group">
+                <div class="input-group-prepend"></div><input class="form-control" type="text" placeholder="module" name="module" required="">
+                <div class="input-group-append"></div>
+            </div>
+            <fieldset>
+                <legend>Milestones</legend><input class="form-control" type="text" placeholder="First Milestone..." name="milestone"><input class="form-control" type="text" placeholder="Second Milestone..." name="milestone"><input class="form-control" type="text"
+                    placeholder="Third Milestone..." name="milestone"><input class="form-control" type="text" placeholder="Milestone..." name="milestone"><button class="btn btn-light btn-block" type="button">Add another milestone</button></fieldset>
+            <fieldset><label for="start_date">Start Date</label><input class="form-control" type="date" required=""><label for="end_date">Completion Date</label><input class="form-control" type="date" required=""><button class="btn btn-primary" type="submit">Add coursework!</button></fieldset>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

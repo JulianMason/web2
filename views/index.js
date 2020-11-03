@@ -4,7 +4,7 @@ const { dirname } = require('path');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
-const public = path.join(__dirname, '/public');
+const public = path.join(__dirname, '../public');
 const router = require('../routes/schedulerRoutes');
 
 app.use(express.static(public));

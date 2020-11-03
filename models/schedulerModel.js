@@ -5,4 +5,4 @@ class Scheduler {
 }
 
 // make module visible outside
-module.exports = GuestBook;
+module.exports = Scheduler;
