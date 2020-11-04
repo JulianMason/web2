@@ -1,14 +1,7 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>scheduer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    {{>header}}
 </head>
 
 <body>
@@ -28,8 +21,9 @@
         </div>
     </nav>
     <!-- End: Navigation with Search -->
+    {{#user_courses}}
     <div class="container">
-        <h1>Welcome, user!</h1>
+        <h1>Welcome, {{first_name}}!</h1>
     </div>
     <!-- Start: 1 Row 1 Column -->
     <div style="margin-left: 0;margin-right: 0;padding: 6px;padding-left: 27px;padding-right: 54px;"></div>
@@ -39,6 +33,7 @@
     </div>
     <div class="container">
         <div class="card">
+        
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item"><a class="nav-link active" href="#">First CW</a></li>
@@ -46,20 +41,25 @@
                     <li class="nav-item"><a class="nav-link" href="#">Third CW</a></li>
                 </ul>
             </div>
-            <div class="card-body" style="width: 500px;">
-                <h5 style="width: 214px;">Coursework</h5>
-                <h5 style="width: 214px;font-size: 15px;">Start-End Date</h5>
+            <div class="card-body" style="width: 80%x;">
+                <h5 style="width: 214px;">Coursework: {{coursework}}</h5>
                 <h5 style="width: 214px;"></h5>
+                <h5 style="width: 292px;">Module: {{module}}</h5>
+                <h5 style="width: 214px;font-size: 15px;">{{start}} to {{end}}</h5>
                 <div class="progress d-lg-flex justify-content-lg-start" style="max-width: 100%;min-width: 25%;width: 288px;">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
                 </div>
-                <h5 style="width: 292px;">Module</h5>
-                <h5 style="width: 292px;">Milestones</h5><button class="btn btn-primary" type="button" style="margin-top: 28px;">Update</button><button class="btn btn-primary" type="button" style="margin-right: 6px;margin-bottom: 0px;margin-left: 32px;margin-top: 28px;">Edit</button>
+                <h5 style="width: 292px;">Milestones</h5>
+                <li>{{milestones}}</li>
+                <br>
+                <button class="btn btn-primary" type="button" style="margin-top: 28px;">Update</button><button class="btn btn-primary" type="button" style="margin-right: 6px;margin-bottom: 0px;margin-left: 32px;margin-top: 28px;">Edit</button>
                 <button
                     class="btn btn-primary" type="button" style="margin-right: 6px;margin-bottom: 0px;margin-left: 32px;margin-top: 28px;">Delete</button>
             </div>
         </div>
+        
     </div>
+    {{/user_courses}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
