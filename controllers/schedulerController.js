@@ -52,3 +52,18 @@ exports.post_new_cw = function(req, res) {
     db.addCW(req.body.coursework, req.body.module, req.body.milestones, req.body.start, req.body.end);
     res.redirect("/");
 }
+
+exports.deleted_cw = function(req, res) {
+    console.log('Deleting coursework');
+
+    let course = req.params._id;
+    db.deleteCW(course).then((list) => {
+        res.render('user_courses', {
+            'firstName': 'Julian',
+            'user_courses': list
+        });
+    }).catch((err) => {
+        console.log('Error handling coursework deletion', err);
+    });
+    res.redirect("/");
+}

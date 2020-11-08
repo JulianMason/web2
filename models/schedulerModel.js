@@ -60,12 +60,25 @@ class Scheduler {
                 console.log("Coursework added", doc);
             }
         })
-        var html = "";
+       /* var html = "";
         for(var i = 0; i < milestones.length; i++) {
             html +="<li>" + milestones[i] + "</li>";
         } document.getElementById("list_milestones").innerHTML = html;
+    } */
+    }
+
+    deleteCW(cwID) {
+        return new Promise((resolve, reject) => {
+            this.db.remove({ _id: cwID }, function(err, user_courses) {
+                if(err) {
+                    reject(err);
+                } else {
+                    resolve(user_courses);
+                    console.log('Function deleteCW() returns: ', user_courses)
+                }
+            });
+        });
     }
 }
-
 // make module visible outside
 module.exports = Scheduler;
