@@ -57,12 +57,7 @@ exports.deleted_cw = function(req, res) {
     console.log('Deleting coursework');
 
     let course = req.params._id;
-    db.deleteCW(course).then((list) => {
-        res.render('user_courses', {
-            'firstName': 'Julian',
-            'user_courses': list
-        });
-    }).catch((err) => {
+    db.deleteCW(course).catch((err) => {
         console.log('Error handling coursework deletion', err);
     });
     res.redirect("/");
