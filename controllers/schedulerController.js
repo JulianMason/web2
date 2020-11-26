@@ -1,8 +1,20 @@
-//import the GuestBook class
+//import the database
 const schedulerDAO = require('../models/schedulerModel');
+const connectDB = require('../models/db1');
+const passport = require('../models/passport');
+
+
+connectDB();
+
+
 
 //create an instance of te class
 const db = new schedulerDAO();
+
+exports.login = function(req, res) {
+    res.render("login");
+};
+
 
 //db.init();
 exports.landing_page = function(req, res) {

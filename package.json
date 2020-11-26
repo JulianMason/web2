@@ -4,7 +4,8 @@
   "description": "An app that allows a student schedule the workflow of their coursework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=production node ./views/index",
+    "dev": "cross-env NODE_ENV=development nodemon ./views/index"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,21 @@
   "homepage": "https://github.com/JulianMason/web2#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.16",
+    "morgan": "^1.10.0",
     "mustache-express": "^1.3.0",
     "nedb": "^1.8.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
   }
 }
