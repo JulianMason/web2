@@ -10,13 +10,13 @@
     <!-- End: Navigation with Search -->
     
     <div class="container">
-        <h1>Welcome, {{firstName}}!</h1>
+        <h1>Welcome, {{name}}!</h1>
     </div>
     <!-- Start: 1 Row 1 Column -->
     <div style="margin-left: 0;margin-right: 0;padding: 6px;padding-left: 27px;padding-right: 54px;"></div>
     <!-- End: 1 Row 1 Column -->
      <div class="container">
-        {{#user_courses}}
+        {{#coursework}}
         <div class="card"></div>
     </div>
     <!-- Start: 1 Row 2 Columns -->
@@ -32,10 +32,10 @@
                             <h4 class="card-title">Coursework: {{coursework}}</h4>
                             <h6 class="text-muted card-subtitle mb-2">Module: {{module}}</h6>
                             <h6 class="text-muted card-subtitle mb-2">Milestones</h6>
-                            <ol id="list_milestones">
+                            <ul id="list_milestones">
                                 <li>{{milestones}}</li> 
-                            </ol>
-                            <a class="card-link" href="#">Edit/Update</a><a class="card-link" href="/courseworks/{{_id}}">Delete</a></div>
+                            </ul>
+                            <a class="card-link" href="#">Edit/Update</a><a class="card-link" href="/coursework/{{_id}}">Delete</a></div>
                     </div>
                 </div>
                 <div class="col-md-6"></div>
@@ -53,7 +53,7 @@
         </div>
     </div>
     <!-- End: 1 Row 2 Columns -->
-    {{/user_courses}}
+    {{/coursework}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>

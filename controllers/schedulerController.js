@@ -2,6 +2,7 @@
 const schedulerDAO = require('../models/schedulerModel');
 const connectDB = require('../models/db1');
 const passport = require('../models/passport');
+const Coursework = require('../models/Coursework');
 
 
 connectDB();
@@ -9,7 +10,7 @@ connectDB();
 
 
 //create an instance of te class
-const db = new schedulerDAO();
+//const db = new schedulerDAO();
 
 exports.login = function(req, res) {
     res.render("login");
@@ -17,8 +18,21 @@ exports.login = function(req, res) {
 
 
 //db.init();
+exports.landing_page = async(req, res) => {
+    try {
+        const coursework = await Coursework.find({ user: req.user.id });
+        res.render('user_courses', {
+            name: req.user.displayName,
+            coursework
+        })
+    } catch(err) {
+        console.error(err);
+        res.render('/views/error/500.mustache');
+    }
+    
+}
+/*
 exports.landing_page = function(req, res) {
-    //res.redirect('view courses.html');
     db.getCourseworks().then((list) => {
         res.render('user_courses', {
             'firstName': "Julian",
@@ -28,7 +42,7 @@ exports.landing_page = function(req, res) {
     }).catch((err) => {
         console.log('promise rejected', err);
     })
-};
+}; */
 
 exports.welcome = function(req, res) {
    /* db.getProfile().then((profile) => {
@@ -46,8 +60,16 @@ exports.new_cw = function(req, res) {
     res.render("newCoursework");
 };
 
-exports.post_new_cw = function(req, res) {
+exports.post_new_cw = async (req, res) => {
     console.log("Processing post-new-cw controller");
+    try {
+        req.body.user = req.user.id;
+        await Coursework.create(req.body);
+        res.redirect('/dashboard');
+    } catch(err) {
+        console.log(err);
+        res.render('../views/error/500.mustache');
+    }
 
     if(!req.body.coursework) {
         res.status(400).send("Coursework title required");
@@ -65,12 +87,19 @@ exports.post_new_cw = function(req, res) {
     res.redirect("/");
 }
 
-exports.deleted_cw = function(req, res) {
+exports.delete_cw = async(req, res) => {
     console.log('Deleting coursework');
-
+    try {
+        await Coursework.remove({ _id: req.params.id });
+        res.redirect('/dashboard');
+    } catch(err) {
+        console.log(err);
+        return res.render('../views/error/500.mustache');
+    }
+    /*
     let course = req.params._id;
     db.deleteCW(course).catch((err) => {
         console.log('Error handling coursework deletion', err);
     });
-    res.redirect("/");
+    res.redirect("/"); */
 }

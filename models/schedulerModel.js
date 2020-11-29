@@ -1,3 +1,4 @@
+/*
 const nedb = require('nedb');
 
 
@@ -65,7 +66,7 @@ class Scheduler {
         for(var i = 0; i < milestones.length; i++) {
             html +="<li>" + milestones[i] + "</li>";
         } document.getElementById("list_milestones").innerHTML = html;
-    } */
+    } */ /*
     }
 
     deleteCW(cwID) {
@@ -82,4 +83,4 @@ class Scheduler {
     }
 }
 // make module visible outside
-module.exports = Scheduler;
+module.exports = Scheduler; */

@@ -4,7 +4,6 @@ const authRouter = express.Router();
 const controller = require('../controllers/schedulerController');
 
 
-////////////////////////// PASSPORT GOOGLE AUTH ////////////////////////////////////
 // @desc Authenticate with Google
 // @route GET /auth/google
 // router.get("/google", controller.login);
@@ -17,6 +16,12 @@ authRouter.get('/google/callback', passport.authenticate('google', { failureRedi
         res.redirect('/dashboard');
     }
 )
-///////////////////////////////////////////////////////////////////////////////////////
+
+// @desc Logout user
+// @route  GET /auth/logout
+authRouter.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+})
 
 module.exports = authRouter;
