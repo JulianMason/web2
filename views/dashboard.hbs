@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  
+</head>
+
+<body>
+
+    
+    <div class="container">
+        <h1>Welcome, {{name}}!</h1>
+    </div>
+    <!-- Start: 1 Row 1 Column -->
+    <div style="margin-left: 0;margin-right: 0;padding: 6px;padding-left: 27px;padding-right: 54px;"></div>
+    <!-- End: 1 Row 1 Column -->
+     <div class="container">
+       
+        <div class="card"></div>
+    </div>
+    <!-- Start: 1 Row 2 Columns -->
+    {{#if coursework}}
+        
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    {{#each coursework}}
+                    <div class="card">
+                        <div class="card-body" style="box-shadow: 1px 1px 7px 1px;">
+                            <h4 class="card-title">Coursework: {{courseTitle}}</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Module: {{module}}</h6>
+                            <h6 class="text-muted card-subtitle mb-2">Milestones</h6>
+                            <ul id="list_milestones">
+                                <li>{{milestones}}</li> 
+                            </ul>
+                            <div class="progress d-lg-flex justify-content-lg-start" style="max-width: 100%;min-width: 100%;width: 288px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                            </div>
+                            <a class="card-link" href="/edit/coursework/{{_id}}">Edit/Update</a><a class="card-link" href="/delete/coursework/{{_id}}">Delete</a>
+                            </div>
+                            
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <br>
+        <div class="container">
+            <h5>You have no coursework</h5>
+     </div>
+        
+    {{/if}}
+    <!-- End: 1 Row 2 Columns -->
+    <!-- Start: 1 Row 2 Columns 
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End: 1 Row 2 Columns -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

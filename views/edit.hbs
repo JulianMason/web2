@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<body>
+    <!-- Start: Navigation with Search -->
+  
+    <!-- End: Navigation with Search -->
+    <div class="container text-left" style="width: 351px;">
+    <h3>Edit coursework</h3>
+    <br>
+        <form action="/{{coursework._id}}" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="coursework">Coursework title</label>
+            <div class="input-group">
+                <div class="input-group-prepend"></div>
+                <input class="form-control" type="text" placeholder="courseTitle" name="courseTitle" value="{{coursework.courseTitle}}" required="" title="ffef">
+                <div class="input-group-append"></div>
+            </div><label for="module">Module</label><label></label>
+            <div class="input-group">
+                <div class="input-group-prepend"></div>
+                <input class="form-control" type="text" placeholder="module" name="module" value="{{coursework.module}}" required="">
+                <div class="input-group-append"></div>
+            </div>
+            <fieldset>
+                <legend>Milestones</legend>
+                <input class="form-control" type="text" placeholder="First Milestone..." name="milestones" value="{{coursework.milestones}}">
+                <input class="form-control" type="text" placeholder="Second Milestone..." name="milestones">
+                <input class="form-control" type="text" placeholder="Third Milestone..." name="milestones">
+                <input class="form-control" type="text" placeholder="Milestone..." name="milestones">
+                <button class="btn btn-light btn-block" type="button">Add another milestone</button>
+            </fieldset>
+            <fieldset>
+            <label for="start_date">Start Date</label>
+                <input class="form-control" type="date" required="" name="start" value="{{coursework.start}}">
+            <label for="end_date" name="end_date">Completion Date</label>
+                <input class="form-control" type="date" required="" name="end" value="{{coursework.end}}">
+            <input type="submit" value="save"> <a href="/" class="btn btn-outline-primary">Cancel</a>
+            </fieldset>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

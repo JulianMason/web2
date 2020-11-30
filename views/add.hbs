@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <!-- Start: Navigation with Search -->
+  
+    <!-- End: Navigation with Search -->
+    <div class="container text-left" style="width: 351px;">
+        <form method="post">
+            <label for="coursework">Coursework title</label>
+            <div class="input-group">
+                <div class="input-group-prepend"></div>
+                <input class="form-control" type="text" placeholder="courseTitle" name="courseTitle" required="" title="ffef">
+                <div class="input-group-append"></div>
+            </div><label for="module">Module</label><label></label>
+            <div class="input-group">
+                <div class="input-group-prepend"></div>
+                <input class="form-control" type="text" placeholder="module" name="module" required="">
+                <div class="input-group-append"></div>
+            </div>
+            <fieldset>
+                <legend>Milestones</legend>
+                <input class="form-control" type="text" placeholder="First Milestone..." name="milestones">
+                <input class="form-control" type="text" placeholder="Second Milestone..." name="milestones">
+                <input class="form-control" type="text" placeholder="Third Milestone..." name="milestones">
+                <input class="form-control" type="text" placeholder="Milestone..." name="milestones">
+                <button class="btn btn-light btn-block" type="button">Add another milestone</button>
+            </fieldset>
+            <fieldset>
+            <label for="start_date">Start Date</label>
+                <input class="form-control" type="date" required="" name="start">
+            <label for="end_date" name="end_date">Completion Date</label>
+                <input class="form-control" type="date" required="" name="end">
+            <button class="btn btn-primary" type="submit">Add coursework!</button>
+            </fieldset>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

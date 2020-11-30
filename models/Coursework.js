@@ -5,7 +5,7 @@ const CourseworkSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    coursework: {
+    courseTitle: {
         type: String,
         required: true,
         trim: true
