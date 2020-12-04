@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
-const public = path.join(__dirname, '../public');
+const public = path.join(__dirname, '/public');
 const router = require('../routes/schedulerRoutes');
 const authRouter = require('../routes/auth')
 const passport = require('passport');
@@ -19,7 +19,7 @@ const MongoStore = require('connect-mongo')(session);
 dotenv.config();
 
 // Logs
-if (process.env.NODE_ENV === 'development') {
+ify(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
@@ -39,7 +39,9 @@ app.use(methodOverride(function (req, res) {
 
 
 // Static folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public/assets')));
+app.use(express.static(path.join(__dirname, '../public/css')));
+app.use(express.static(path.join(__dirname, '../public/assets/css')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());

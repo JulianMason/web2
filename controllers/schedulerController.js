@@ -17,6 +17,11 @@ exports.login = function(req, res) {
 };
 
 
+exports.add_field = function(req, res) {
+    var scripts = [{ script: '../helpers/add_field.js' }];
+    res.render("add", { scripts: scripts });
+}
+
 //db.init();
 exports.landing_page = async(req, res) => {
     try {

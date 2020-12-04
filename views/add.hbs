@@ -9,7 +9,7 @@
   
     <!-- End: Navigation with Search -->
     <div class="container text-left" style="width: 351px;">
-        <form method="post">
+        <form id="form" method="post">
             <label for="coursework">Coursework title</label>
             <div class="input-group">
                 <div class="input-group-prepend"></div>
@@ -21,13 +21,13 @@
                 <input class="form-control" type="text" placeholder="module" name="module" required="">
                 <div class="input-group-append"></div>
             </div>
-            <fieldset>
+            <fieldset id="fset">
                 <legend>Milestones</legend>
                 <input class="form-control" type="text" placeholder="First Milestone..." name="milestones">
                 <input class="form-control" type="text" placeholder="Second Milestone..." name="milestones">
                 <input class="form-control" type="text" placeholder="Third Milestone..." name="milestones">
                 <input class="form-control" type="text" placeholder="Milestone..." name="milestones">
-                <button class="btn btn-light btn-block" type="button">Add another milestone</button>
+                
             </fieldset>
             <fieldset>
             <label for="start_date">Start Date</label>
@@ -37,9 +37,13 @@
             <button class="btn btn-primary" type="submit">Add coursework!</button>
             </fieldset>
         </form>
+        <button onclick="add_field()" class="btn btn-light btn-block" type="button">Add another milestone</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    {{#each scripts}}
+        <script src="{{script}}"></script>
+    {{/each}}
 </body>
 
 </html>
