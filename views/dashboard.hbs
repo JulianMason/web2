@@ -30,9 +30,11 @@
                             <h4 class="card-title">Coursework: {{courseTitle}}</h4>
                             <h6 class="text-muted card-subtitle mb-2">Module: {{module}}</h6>
                             <h6 class="text-muted card-subtitle mb-2">Milestones</h6>
-                            <ul id="list_milestones">
-                                <li>{{milestones}}</li> 
-                            </ul>
+                            {{#each milestones as |milestone|}}
+                            <input type="checkbox" name="thebox "value="{{milestone}}">
+                                <label for"thebox">{{milestone}}</label><br>
+                            
+                            {{/each}}
                             <div class="progress d-lg-flex justify-content-lg-start" style="max-width: 100%;min-width: 100%;width: 288px;">
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
                             </div>

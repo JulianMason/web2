@@ -38,7 +38,6 @@ app.use(methodOverride(function (req, res) {
 
 
 
-
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
 

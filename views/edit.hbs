@@ -25,10 +25,9 @@
             </div>
             <fieldset>
                 <legend>Milestones</legend>
-                <input class="form-control" type="text" placeholder="First Milestone..." name="milestones" value="{{coursework.milestones}}">
-                <input class="form-control" type="text" placeholder="Second Milestone..." name="milestones">
-                <input class="form-control" type="text" placeholder="Third Milestone..." name="milestones">
-                <input class="form-control" type="text" placeholder="Milestone..." name="milestones">
+            {{#each coursework.milestones as |milestone|}}
+                <input class="form-control" type="text" placeholder="First Milestone..." name="milestones" value="{{milestone}}">
+            {{/each}}
                 <button class="btn btn-light btn-block" type="button">Add another milestone</button>
             </fieldset>
             <fieldset>
