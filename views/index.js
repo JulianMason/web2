@@ -13,13 +13,14 @@ const authRouter = require('../routes/auth')
 const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+//const helpers = require('../helpers/hbs');
 
 
 // Load config
 dotenv.config();
 
 // Logs
-ify(process.env.NODE_ENV === 'development') {
+if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
@@ -48,11 +49,12 @@ app.use(express.json());
 
 
 // Handlebars Helpers
-const { formatDate } = require('../helpers/hbs');
+const { formatDate, select } = require('../helpers/hbs');
 
 // Handlebars
 app.engine('.hbs', exphbs({ helpers: {
     formatDate,
+    select
 }, extname: '.hbs', partialsDir: [ path.join(__dirname, './partials')] }));
 app.set('view engine', '.hbs');
 

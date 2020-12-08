@@ -37,6 +37,35 @@ exports.landing_page = async(req, res) => {
     
 }
 
+// Shared coursework
+exports.shared_cw = async(req, res) => {
+    try {
+        const coursework = await Coursework.find({ user: req.user.id }).lean();
+        res.render('shared_cw', {
+            coursework
+        })
+    } catch(err) {
+        console.error(err);
+        res.render('/views/error/500.hbs');
+    }
+    
+}
+
+// Incomplete coursework only
+exports.incomplete = async(req, res) => {
+    try {
+        const coursework = await Coursework.find({ user: req.user.id, status: 'Incomplete' }).lean();
+        res.render('incomplete', {
+            name: req.user.displayName,
+            coursework
+        })
+    } catch(err) {
+        console.error(err);
+        res.render('/views/error/500.hbs');
+    }
+    
+}
+
 exports.new_cw = function(req, res) {
     res.render("add");
 };

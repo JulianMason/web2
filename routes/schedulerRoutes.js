@@ -23,10 +23,12 @@ router.get('/google/callback', passport.authenticate('google', {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 router.get("/dashboard", ensureAuth, controller.landing_page);
+router.get("/incomplete", ensureAuth, controller.incomplete);
 router.get("/new", ensureAuth, controller.add_field, controller.new_cw);
 router.post("/new", ensureAuth, controller.post_new_cw);
 router.post('/:id', ensureAuth, controller.update_cw);
 router.get('/edit/coursework/:id', ensureAuth, controller.edit_cw);
+router.get('/share/oursework/:id', ensureAuth, controller.shared_cw);
 
 
 router.get('/delete/coursework/:id', ensureAuth, controller.delete_cw);

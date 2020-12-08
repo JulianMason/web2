@@ -1,15 +1,17 @@
 <html>
-
 <head>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduler Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/public/assets/css/styles.css">
 </head>
 
 <body>
 
     
-    <div class="container">
-        <h1>Welcome, {{name}}!</h1>
-    </div>
     <!-- Start: 1 Row 1 Column -->
     <div style="margin-left: 0;margin-right: 0;padding: 6px;padding-left: 27px;padding-right: 54px;"></div>
     <!-- End: 1 Row 1 Column -->
@@ -44,18 +46,7 @@
                             
                             {{/each}}
                             <p class="card-title">Started: <b>{{formatDate start 'MMMM D, YYYY'}}</b></p>
-                            <a class="card-link" href="/edit/coursework/{{_id}}">Edit or Update Status</a><a class="card-link" href="/delete/coursework/{{_id}}">Delete</a><a class="card-link" href="#" id="myBtn">Share</a>
                             </div>
-                            <div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>Share your {{courseTitle}} coursework with a colleague!</h4>
-    <h5 id="p1">localhost:5000/coursework/{{_id}}</h5><button class="btn btn-outline-primary" onclick="copyToClipboard('#p1')">Copy Link</button>
-  </div>
-
-</div>
                     </div>
                     {{/each}}
                 </div>

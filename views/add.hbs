@@ -23,27 +23,29 @@
             </div>
             <fieldset id="fset">
                 <legend>Milestones</legend>
-                <input class="form-control" type="text" placeholder="First Milestone..." name="milestones">
-                <input class="form-control" type="text" placeholder="Second Milestone..." name="milestones">
-                <input class="form-control" type="text" placeholder="Third Milestone..." name="milestones">
-                <input class="form-control" type="text" placeholder="Milestone..." name="milestones">
                 
+
+                <button onclick="add_field()" class="btn btn-outline-primary btn-block" type="button">Click to input a milestone</button>
             </fieldset>
             <fieldset>
             <label for="start_date">Start Date</label>
                 <input class="form-control" type="date" required="" name="start">
             <label for="end_date" name="end_date">Completion Date</label>
                 <input class="form-control" type="date" required="" name="end">
+                <br>
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="Incomplete" selected>Incomplete</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <br>
             <button class="btn btn-primary" type="submit">Add coursework!</button>
             </fieldset>
         </form>
-        <button onclick="add_field()" class="btn btn-light btn-block" type="button">Add another milestone</button>
+        
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    {{#each scripts}}
-        <script src="{{script}}"></script>
-    {{/each}}
 </body>
 
 </html>

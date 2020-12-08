@@ -29,7 +29,7 @@
                         <div class="card-body" style="box-shadow: 1px 1px 7px 1px;">
                             
                             
-                            <p class="card-title">Status:<b>{{status}}</b></p>
+                            <p class="card-title">Status: <b>{{status}}</b></p>
                             
                                 {{!-- <p class="card-title" style="color: green">{{status}}</p>
                             {{/if}} --}}
@@ -40,22 +40,21 @@
                             {{#each milestones as |milestone|}}
                             <ul>
                                 <li>{{milestone}}</li>
-                            </ul>
-                            
+                            </ul>                            
                             {{/each}}
                             <p class="card-title">Started: <b>{{formatDate start 'MMMM D, YYYY'}}</b></p>
-                            <a class="card-link" href="/edit/coursework/{{_id}}">Edit or Update Status</a><a class="card-link" href="/delete/coursework/{{_id}}">Delete</a><a class="card-link" href="#" id="myBtn">Share</a>
+                            <a class="card-link" href="/edit/coursework/{{_id}}">Edit or Update Status</a><a class="card-link" href="/delete/coursework/{{_id}}">Delete</a><a class="card-link" id="myBtn">Share</a>
                             </div>
                             <div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h4>Share your {{courseTitle}} coursework with a colleague!</h4>
-    <h5 id="p1">localhost:5000/coursework/{{_id}}</h5><button class="btn btn-outline-primary" onclick="copyToClipboard('#p1')">Copy Link</button>
+    <p>Some text in the Modal..</p>
   </div>
 
 </div>
+                            
                     </div>
                     {{/each}}
                 </div>
@@ -84,6 +83,5 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

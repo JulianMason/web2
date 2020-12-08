@@ -11,7 +11,7 @@
     <h3>Edit coursework</h3>
     <br>
         <form action="/{{coursework._id}}" method="POST">
-            <input type="hidden" name="_method" value="PUT">
+            
             <label for="coursework">Coursework title</label>
             <div class="input-group">
                 <div class="input-group-prepend"></div>
@@ -23,19 +23,25 @@
                 <input class="form-control" type="text" placeholder="module" name="module" value="{{coursework.module}}" required="">
                 <div class="input-group-append"></div>
             </div>
-            <fieldset>
+            <fieldset id="fset">
                 <legend>Milestones</legend>
             {{#each coursework.milestones as |milestone|}}
-                <input class="form-control" type="text" placeholder="First Milestone..." name="milestones" value="{{milestone}}">
+                <input class="form-control" type="text" name="milestones" value="{{milestone}}">
             {{/each}}
-                <button class="btn btn-light btn-block" type="button">Add another milestone</button>
+                <button onclick="add_field()" class="btn  btn-block" type="button">Click to input a milestone</button>
             </fieldset>
             <fieldset>
             <label for="start_date">Start Date</label>
-                <input class="form-control" type="date" required="" name="start" value="{{coursework.start}}">
+                <input class="form-control" type="date" required="" name="start" value="{{formatDate coursework.start 'YYYY-MM-DD'}}">
             <label for="end_date" name="end_date">Completion Date</label>
-                <input class="form-control" type="date" required="" name="end" value="{{coursework.end}}">
-            <input type="submit" value="save"> <a href="/" class="btn btn-outline-primary">Cancel</a>
+                <input class="form-control" type="date" required="" name="end" value="{{formatDate coursework.end 'YYYY-MM-DD'}}">
+                <select id="status" name="status" value="{{status}}">
+                    {{#select coursework.status}}
+                        <option value="Incomplete" selected>Incomplete</option>
+                        <option value="Completed">Completed</option>
+                    {{/select}}
+                </select>
+            <input class="btn btn-outline-primary" type="submit" value="Update"> <a href="/" class="btn btn-outline-primary">Cancel</a>
             </fieldset>
         </form>
     </div>

@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
 
-const CourseworkSchema = new mongoose.Schema({
+var CourseworkSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    status: {
+        type: String,
+        default: 'Incomplete',
+        enum: ['Incomplete', 'Completed']
     },
     courseTitle: {
         type: String,
@@ -31,5 +36,6 @@ const CourseworkSchema = new mongoose.Schema({
         default: Date.now
     }
 })
+;
 
 module.exports = mongoose.model('Coursework', CourseworkSchema);
